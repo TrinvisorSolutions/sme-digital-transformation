@@ -1,0 +1,41 @@
+enquiry_id,enquiry_text,expected_type,expected_priority,expected_department
+T001,"Could someone talk me through your pricing options for a team of 60?",Sales,Medium,Sales
+T002,"We need a formal quote for a 200-user rollout this quarter.",Sales,High,Sales
+T003,"Can we arrange a product demonstration before we make a decision?",Sales,Medium,Sales
+T004,"We are planning to replace our current supplier and need a proposal.",Sales,High,Sales
+T005,"Do you support businesses with around 300 members of staff?",Sales,Medium,Sales
+T006,"Our users are locked out of the platform and work has stopped.",Technical Support,Urgent,Technical Support
+T007,"We keep receiving an error message when submitting new orders.",Technical Support,High,Technical Support
+T008,"Is there documentation available for connecting to your API?",Technical Support,Medium,Technical Support
+T009,"The reporting screen will not open for several members of our team.",Technical Support,Urgent,Technical Support
+T010,"Something is wrong with the system and we cannot complete transactions.",Technical Support,Urgent,Technical Support
+T011,"There appears to be an incorrect charge on this month's invoice.",Billing,High,Finance
+T012,"Please send another copy of invoice INV-7812.",Billing,Low,Finance
+T013,"The payment we sent yesterday has not been reflected on our account.",Billing,High,Finance
+T014,"Can you change the invoicing address for our organisation?",Billing,Medium,Finance
+T015,"The PO reference on our bill needs to be corrected.",Billing,Medium,Finance
+T016,"I have been waiting for an answer to my complaint for more than a week.",Complaint,High,Customer Service
+T017,"This service issue is now causing disruption for our customers and needs immediate attention.",Complaint,Urgent,Customer Service
+T018,"I need this matter escalated because the previous response did not resolve it.",Complaint,High,Customer Service
+T019,"We are extremely dissatisfied with how this case has been handled.",Complaint,High,Customer Service
+T020,"If this problem continues we may have to terminate the service.",Complaint,High,Customer Service
+T021,"Would your organisation be open to a joint commercial initiative?",Partnership,Medium,Management
+T022,"We are searching for a partner to support an upcoming industry programme.",Partnership,Medium,Management
+T023,"Would you consider supporting our conference as a sponsor?",Partnership,Medium,Management
+T024,"We would like to discuss a referral arrangement between our companies.",Partnership,Low,Management
+T025,"Could we schedule a conversation about working together on a new project?",Partnership,Medium,Management
+T026,"Can you tell me your office opening times?",General Enquiry,Low,Customer Service
+T027,"Where can I read more about your organisation?",General Enquiry,Low,Customer Service
+T028,"Which countries do you currently operate in?",General Enquiry,Low,Customer Service
+T029,"Who is the best person to contact with a general question?",General Enquiry,Low,Customer Service
+T030,"Where can I access your customer guidance documents?",General Enquiry,Low,Customer Service
+T031,"We want prices for your platform but also want to discuss becoming a referral partner.",Partnership,Medium,Management
+T032,"Our latest invoice looks wrong and we are unable to access the portal as well.",Technical Support,Urgent,Technical Support
+T033,"We are unhappy with the service and also need clarification on our latest charge.",Complaint,High,Customer Service
+T034,"Could you provide pricing and explain whether your API integrates with Salesforce?",Sales,Medium,Sales
+T035,"Our account is inaccessible and we have a client presentation starting in an hour.",Technical Support,Urgent,Technical Support
+T036,"We would like to sponsor one of your events and explore a longer-term collaboration.",Partnership,Medium,Management
+T037,"We have not received a response and the delay is starting to affect our operations.",Complaint,Urgent,Customer Service
+T038,"Can you confirm the price of the service and whether there is a minimum contract size?",Sales,Medium,Sales
+T039,"We need a replacement invoice because the purchase order details are wrong.",Billing,Medium,Finance
+T040,"I would like general information about your services before deciding who to contact.",General Enquiry,Low,Customer Service
