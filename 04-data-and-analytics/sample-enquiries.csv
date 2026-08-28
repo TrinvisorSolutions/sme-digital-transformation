@@ -1,0 +1,101 @@
+enquiry_id,enquiry_text,expected_type,expected_priority,expected_department
+E001,Do you provide services for organisations with around 25 employees?,Sales,Medium,Sales
+E002,We are experiencing intermittent system errors. Please investigate.,Technical Support,High,Technical Support
+E003,Please update the billing address on our account.,Billing,Medium,Finance
+E004,We are considering cancelling because our previous issue was not resolved.,Complaint,High,Customer Service
+E005,We would like to explore a strategic partnership with your organisation.,Partnership,Medium,Management
+E006,What are your normal business and support hours?,General Enquiry,Low,Customer Service
+E007,Could you send information about your enterprise package for 40 staff?,Sales,Medium,Sales
+E008,The dashboard is not loading correctly for our operations team.,Technical Support,High,Technical Support
+E009,Payment has been made but the account still shows an outstanding balance.,Billing,High,Finance
+E010,We are unhappy with the response time and would like this escalated.,Complaint,High,Customer Service
+E011,Our organisation is interested in a joint initiative with your team.,Partnership,Medium,Management
+E012,Can you send me more information about the services you provide?,General Enquiry,Low,Customer Service
+E013,We are comparing suppliers and would like a quotation for your services.,Sales,High,Sales
+E014,The platform is showing an error when we try to process customer orders.,Technical Support,High,Technical Support
+E015,We appear to have been charged twice on invoice INV-2584.,Billing,High,Finance
+E016,Our issue remains unresolved and this is now affecting our customers.,Complaint,Urgent,Customer Service
+E017,We would like to explore a strategic partnership with your organisation.,Partnership,Medium,Management
+E018,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E019,We are interested in pricing for 250 users and would like an implementation proposal.,Sales,High,Sales
+E020,We are experiencing intermittent system errors. Please investigate.,Technical Support,High,Technical Support
+E021,Our finance team has a question about the amount shown on invoice INV-2139.,Billing,Medium,Finance
+E022,We raised an issue last week and have still not received a response.,Complaint,High,Customer Service
+E023,We are looking for technology partners for a new client programme.,Partnership,Medium,Management
+E024,What are your normal business and support hours?,General Enquiry,Low,Customer Service
+E025,Can someone contact us about moving our team onto your platform?,Sales,High,Sales
+E026,The platform is showing an error when we try to process customer orders.,Technical Support,High,Technical Support
+E027,Please update the billing address on our account.,Billing,Medium,Finance
+E028,We are considering cancelling because our previous issue was not resolved.,Complaint,High,Customer Service
+E029,Our organisation is interested in a joint initiative with your team.,Partnership,Medium,Management
+E030,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E031,Could you send information about your enterprise package for 120 staff?,Sales,Medium,Sales
+E032,Can you confirm whether your API supports integration with our CRM?,Technical Support,Medium,Technical Support
+E033,Payment has been made but the account still shows an outstanding balance.,Billing,High,Finance
+E034,I would like to make a formal complaint about the service we received.,Complaint,High,Customer Service
+E035,Could we arrange a meeting to discuss a potential commercial partnership?,Partnership,Medium,Management
+E036,Can you send me more information about the services you provide?,General Enquiry,Low,Customer Service
+E037,Could you send information about your enterprise package for 500 staff?,Sales,Medium,Sales
+E038,Several users are unable to access their accounts this morning.,Technical Support,Urgent,Technical Support
+E039,Please update the billing address on our account.,Billing,Medium,Finance
+E040,I would like to make a formal complaint about the service we received.,Complaint,High,Customer Service
+E041,We are looking for technology partners for a new client programme.,Partnership,Medium,Management
+E042,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E043,Could you send information about your enterprise package for 40 staff?,Sales,Medium,Sales
+E044,Several users are unable to access their accounts this morning.,Technical Support,Urgent,Technical Support
+E045,We appear to have been charged twice on invoice INV-3621.,Billing,High,Finance
+E046,We are considering cancelling because our previous issue was not resolved.,Complaint,High,Customer Service
+E047,Could we arrange a meeting to discuss a potential commercial partnership?,Partnership,Medium,Management
+E048,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E049,Do you provide services for organisations with around 500 employees?,Sales,Medium,Sales
+E050,We are experiencing intermittent system errors. Please investigate.,Technical Support,High,Technical Support
+E051,Payment has been made but the account still shows an outstanding balance.,Billing,High,Finance
+E052,Our issue remains unresolved and this is now affecting our customers.,Complaint,Urgent,Customer Service
+E053,Could we arrange a meeting to discuss a potential commercial partnership?,Partnership,Medium,Management
+E054,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E055,We are interested in pricing for 500 users and would like an implementation proposal.,Sales,High,Sales
+E056,We are experiencing intermittent system errors. Please investigate.,Technical Support,High,Technical Support
+E057,Please update the billing address on our account.,Billing,Medium,Finance
+E058,Please escalate our complaint to a manager.,Complaint,High,Customer Service
+E059,Our organisation is interested in a joint initiative with your team.,Partnership,Medium,Management
+E060,What are your normal business and support hours?,General Enquiry,Low,Customer Service
+E061,We are comparing suppliers and would like a quotation for your services.,Sales,High,Sales
+E062,The platform is showing an error when we try to process customer orders.,Technical Support,High,Technical Support
+E063,We appear to have been charged twice on invoice INV-8962.,Billing,High,Finance
+E064,We raised an issue last week and have still not received a response.,Complaint,High,Customer Service
+E065,Would you be interested in sponsoring our upcoming industry event?,Partnership,Medium,Management
+E066,Do you operate outside the UK?,General Enquiry,Low,Customer Service
+E067,We would like a demo and pricing for your business solution.,Sales,Medium,Sales
+E068,The platform is showing an error when we try to process customer orders.,Technical Support,High,Technical Support
+E069,Payment has been made but the account still shows an outstanding balance.,Billing,High,Finance
+E070,We are considering cancelling because our previous issue was not resolved.,Complaint,High,Customer Service
+E071,Could we arrange a meeting to discuss a potential commercial partnership?,Partnership,Medium,Management
+E072,What are your normal business and support hours?,General Enquiry,Low,Customer Service
+E073,We are interested in pricing for 75 users and would like an implementation proposal.,Sales,High,Sales
+E074,The dashboard is not loading correctly for our operations team.,Technical Support,High,Technical Support
+E075,Our finance team has a question about the amount shown on invoice INV-1117.,Billing,Medium,Finance
+E076,We raised an issue last week and have still not received a response.,Complaint,High,Customer Service
+E077,Would you be interested in sponsoring our upcoming industry event?,Partnership,Medium,Management
+E078,Where can I find your customer onboarding documentation?,General Enquiry,Low,Customer Service
+E079,Could you send information about your enterprise package for 75 staff?,Sales,Medium,Sales
+E080,The platform is showing an error when we try to process customer orders.,Technical Support,High,Technical Support
+E081,Payment has been made but the account still shows an outstanding balance.,Billing,High,Finance
+E082,I would like to make a formal complaint about the service we received.,Complaint,High,Customer Service
+E083,Would you be interested in sponsoring our upcoming industry event?,Partnership,Medium,Management
+E084,Can you tell me where your company is based?,General Enquiry,Low,Customer Service
+E085,Can someone contact us about moving our team onto your platform?,Sales,High,Sales
+E086,We are experiencing intermittent system errors. Please investigate.,Technical Support,High,Technical Support
+E087,We appear to have been charged twice on invoice INV-6559.,Billing,High,Finance
+E088,We raised an issue last week and have still not received a response.,Complaint,High,Customer Service
+E089,Would you be interested in sponsoring our upcoming industry event?,Partnership,Medium,Management
+E090,Can you send me more information about the services you provide?,General Enquiry,Low,Customer Service
+E091,We are comparing suppliers and would like a quotation for your services.,Sales,High,Sales
+E092,Our team cannot log into the system and this is affecting operations.,Technical Support,Urgent,Technical Support
+E093,We appear to have been charged twice on invoice INV-9856.,Billing,High,Finance
+E094,We raised an issue last week and have still not received a response.,Complaint,High,Customer Service
+E095,Would you be interested in sponsoring our upcoming industry event?,Partnership,Medium,Management
+E096,Who should I contact about a general account question?,General Enquiry,Low,Customer Service
+E097,We are interested in pricing for 40 users and would like an implementation proposal.,Sales,High,Sales
+E098,Our team cannot log into the system and this is affecting operations.,Technical Support,Urgent,Technical Support
+E099,Could you send us a copy of our latest invoice?,Billing,Low,Finance
+E100,We are considering cancelling because our previous issue was not resolved.,Complaint,High,Customer Service
