@@ -1,10 +1,10 @@
 import json
 import os
 
-from openai import OpenAI
+from google import genai
 
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 SYSTEM_PROMPT = """
@@ -34,7 +34,7 @@ Assign exactly one department:
 - Customer Service
 - Management
 
-Return ONLY valid JSON using this structure:
+Return ONLY valid JSON in this format:
 
 {
   "enquiry_type": "",
@@ -42,19 +42,19 @@ Return ONLY valid JSON using this structure:
   "department": ""
 }
 
-Guidance:
+Classification guidance:
 
 Sales:
-Pricing, demonstrations, quotations, proposals, buying interest.
+Pricing, demonstrations, quotations, proposals and buying interest.
 
 Technical Support:
 System failures, login issues, API questions, errors and technical problems.
 
 Billing:
-Invoices, charges, payments, purchase orders and billing details.
+Invoices, payments, charges, purchase orders and billing details.
 
 Complaint:
-Dissatisfaction, unresolved service issues, escalation requests or cancellation due to poor service.
+Dissatisfaction, unresolved service issues, escalation requests or cancellation caused by poor service.
 
 Partnership:
 Sponsorship, referral relationships, commercial partnerships, joint initiatives and collaboration.
@@ -65,7 +65,7 @@ General information that does not clearly belong to another category.
 Priority guidance:
 
 Urgent:
-Business operations are significantly disrupted, customers are being affected, or immediate action is clearly required.
+Business operations are significantly disrupted, customers are being affected or immediate action is clearly required.
 
 High:
 Important issue requiring prompt attention.
@@ -76,20 +76,36 @@ Normal business request requiring follow-up.
 Low:
 Informational or non-time-sensitive request.
 
-Classify based on meaning, not simply individual keywords.
+Classify based on meaning rather than individual keywords.
 """
 
 
 def classify_enquiry_llm(text):
-    response = client.responses.create(
-        model="gpt-5.4-nano",
-        instructions=SYSTEM_PROMPT,
-        input=text
+    prompt = f"""
+{SYSTEM_PROMPT}
+
+Customer enquiry:
+
+{text}
+"""
+
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt
     )
 
-    result = json.loads(response.output_text)
+    output = response.text.strip()
 
-    return result
+    if output.startswith("```json"):
+        output = output[7:]
+
+    if output.startswith("```"):
+        output = output[3:]
+
+    if output.endswith("```"):
+        output = output[:-3]
+
+    return json.loads(output.strip())
 
 
 if __name__ == "__main__":
