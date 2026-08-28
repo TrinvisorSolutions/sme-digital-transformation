@@ -1,67 +1,58 @@
-def classify_enquiry(text):
-    text = text.lower()
+import csv
 
-    if any(word in text for word in [
-        "invoice", "billing", "charged", "purchase order",
-        "payment", "outstanding balance"
-    ]):
-        return {
-            "enquiry_type": "Billing",
-            "priority": "Medium",
-            "department": "Finance"
-        }
+from classifier import classify_enquiry
 
-    if any(word in text for word in [
-        "cannot log in", "system error", "not loading",
-        "api", "technical", "unable to access",
-        "stopped working"
-    ]):
-        return {
-            "enquiry_type": "Technical Support",
-            "priority": "High",
-            "department": "Technical Support"
-        }
 
-    if any(word in text for word in [
-        "complaint", "cancel", "not resolved",
-        "escalate", "unhappy", "not received a response"
-    ]):
-        return {
-            "enquiry_type": "Complaint",
-            "priority": "High",
-            "department": "Customer Service"
-        }
+def load_enquiries(file_path):
+    enquiries = []
 
-    if any(word in text for word in [
-        "pricing", "quotation", "proposal",
-        "enterprise package", "demo",
-        "moving our team", "interested in"
-    ]):
-        return {
-            "enquiry_type": "Sales",
-            "priority": "High",
-            "department": "Sales"
-        }
+    with open(file_path, mode="r", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
 
-    if any(word in text for word in [
-        "partnership", "sponsoring",
-        "sponsorship", "joint initiative",
-        "referral partner", "technology partners"
-    ]):
-        return {
-            "enquiry_type": "Partnership",
-            "priority": "Medium",
-            "department": "Management"
-        }
+        for row in reader:
+            enquiries.append(row)
 
-    return {
-        "enquiry_type": "General Enquiry",
-        "priority": "Low",
-        "department": "Customer Service"
-    }
+    return enquiries
+
+
+def evaluate(enquiries):
+    total = len(enquiries)
+
+    type_correct = 0
+    priority_correct = 0
+    department_correct = 0
+    fully_correct = 0
+
+    for enquiry in enquiries:
+        result = classify_enquiry(enquiry["enquiry_text"])
+
+        type_match = result["enquiry_type"] == enquiry["expected_type"]
+        priority_match = result["priority"] == enquiry["expected_priority"]
+        department_match = result["department"] == enquiry["expected_department"]
+
+        if type_match:
+            type_correct += 1
+
+        if priority_match:
+            priority_correct += 1
+
+        if department_match:
+            department_correct += 1
+
+        if type_match and priority_match and department_match:
+            fully_correct += 1
+
+    print("Baseline Classifier Evaluation")
+    print("------------------------------")
+    print(f"Total enquiries: {total}")
+    print(f"Type accuracy: {(type_correct / total) * 100:.2f}%")
+    print(f"Priority accuracy: {(priority_correct / total) * 100:.2f}%")
+    print(f"Department accuracy: {(department_correct / total) * 100:.2f}%")
+    print(f"Fully correct classifications: {(fully_correct / total) * 100:.2f}%")
 
 
 if __name__ == "__main__":
-    sample = "We are interested in pricing for 120 users and would like a proposal."
-    result = classify_enquiry(sample)
-    print(result)
+    dataset_path = "../../04-data-and-analytics/sample-enquiries.csv"
+
+    enquiries = load_enquiries(dataset_path)
+    evaluate(enquiries)
