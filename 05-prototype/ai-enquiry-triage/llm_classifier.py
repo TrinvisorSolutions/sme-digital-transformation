@@ -82,7 +82,7 @@ Classify based on meaning, not simply individual keywords.
 
 def classify_enquiry_llm(text):
     response = client.responses.create(
-        model="gpt-5.6-luna",
+        model="gpt-5.4-nano",
         instructions=SYSTEM_PROMPT,
         input=text
     )
