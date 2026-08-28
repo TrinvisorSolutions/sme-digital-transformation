@@ -20,6 +20,10 @@ A hybrid approach combines deterministic rules, LLM classification and human rev
 
 ![Hybrid AI Triage Workflow](assets/hybrid-ai-triage-workflow.png)
 
+## Project Results Dashboard
+
+![Project Results Dashboard](assets/project-results-dashboard.png)
+
 ## Model Evaluation
 
 The LLM generalised substantially better than the tuned rules engine on unseen enquiries.
