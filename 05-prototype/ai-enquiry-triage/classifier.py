@@ -1,152 +1,99 @@
-def classify_enquiry(text):
-    text = text.lower()
+import json
+import os
 
-    # Partnership should be checked before Sales because
-    # partnership messages may also contain phrases such as "interested in".
-    if any(phrase in text for phrase in [
-        "partnership",
-        "strategic partnership",
-        "commercial partnership",
-        "joint initiative",
-        "technology partner",
-        "technology partners",
-        "referral partner",
-        "sponsoring",
-        "sponsorship",
-        "industry event"
-    ]):
-        return {
-            "enquiry_type": "Partnership",
-            "priority": "Medium",
-            "department": "Management"
-        }
+from openai import OpenAI
 
-    # Complaints and escalations
-    if any(phrase in text for phrase in [
-        "complaint",
-        "cancel",
-        "cancelling",
-        "not resolved",
-        "unresolved",
-        "not received a response",
-        "have still not received",
-        "escalate",
-        "escalated",
-        "unhappy",
-        "affecting our customers"
-    ]):
-        priority = "Urgent" if any(phrase in text for phrase in [
-            "affecting our customers",
-            "critical",
-            "severe"
-        ]) else "High"
 
-        return {
-            "enquiry_type": "Complaint",
-            "priority": priority,
-            "department": "Customer Service"
-        }
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-    # Billing
-    if any(phrase in text for phrase in [
-        "invoice",
-        "billing",
-        "charged",
-        "purchase order",
-        "payment",
-        "outstanding balance"
-    ]):
-        if any(phrase in text for phrase in [
-            "charged twice",
-            "outstanding balance"
-        ]):
-            priority = "High"
-        elif any(phrase in text for phrase in [
-            "copy of our latest invoice",
-            "send us a copy"
-        ]):
-            priority = "Low"
-        else:
-            priority = "Medium"
 
-        return {
-            "enquiry_type": "Billing",
-            "priority": priority,
-            "department": "Finance"
-        }
+SYSTEM_PROMPT = """
+You are an enquiry triage classifier for a business.
 
-    # Technical Support
-    if any(phrase in text for phrase in [
-        "cannot log in",
-        "unable to access",
-        "system error",
-        "showing an error",
-        "not loading",
-        "api",
-        "technical",
-        "stopped working",
-        "system has stopped",
-        "cannot process",
-        "unable to process"
-    ]):
-        if any(phrase in text for phrase in [
-            "cannot log in",
-            "unable to access",
-            "affecting operations",
-            "cannot process",
-            "system has stopped",
-            "several users"
-        ]):
-            priority = "Urgent"
-        elif "api" in text:
-            priority = "Medium"
-        else:
-            priority = "High"
+Classify each enquiry into exactly one enquiry type:
 
-        return {
-            "enquiry_type": "Technical Support",
-            "priority": priority,
-            "department": "Technical Support"
-        }
+- Sales
+- Technical Support
+- Billing
+- Complaint
+- Partnership
+- General Enquiry
 
-    # Sales
-    if any(phrase in text for phrase in [
-        "pricing",
-        "quotation",
-        "proposal",
-        "enterprise package",
-        "demo",
-        "moving our team",
-        "services for organisations",
-        "services for organizations",
-        "business solution",
-        "interested in your enterprise",
-        "interested in pricing"
-    ]):
-        if any(phrase in text for phrase in [
-            "quotation",
-            "proposal",
-            "implementation proposal",
-            "moving our team"
-        ]):
-            priority = "High"
-        else:
-            priority = "Medium"
+Assign exactly one priority:
 
-        return {
-            "enquiry_type": "Sales",
-            "priority": priority,
-            "department": "Sales"
-        }
+- Low
+- Medium
+- High
+- Urgent
 
-    return {
-        "enquiry_type": "General Enquiry",
-        "priority": "Low",
-        "department": "Customer Service"
-    }
+Assign exactly one department:
+
+- Sales
+- Technical Support
+- Finance
+- Customer Service
+- Management
+
+Return only valid JSON in this format:
+
+{
+  "enquiry_type": "",
+  "priority": "",
+  "department": ""
+}
+
+Sales:
+Pricing, demonstrations, quotations, proposals and buying interest.
+
+Technical Support:
+System failures, login issues, API questions, errors and technical problems.
+
+Billing:
+Invoices, payments, charges, purchase orders and billing details.
+
+Complaint:
+Dissatisfaction, unresolved service issues, escalation requests or cancellation caused by poor service.
+
+Partnership:
+Sponsorship, referral relationships, commercial partnerships, joint initiatives and collaboration.
+
+General Enquiry:
+General information that does not clearly belong to another category.
+
+Priority guidance:
+
+Urgent:
+Business operations are significantly disrupted, customers are being affected or immediate action is clearly required.
+
+High:
+Important issue requiring prompt attention.
+
+Medium:
+Normal business request requiring follow-up.
+
+Low:
+Informational or non-time-sensitive request.
+
+Classify based on meaning rather than individual keywords.
+"""
+
+
+def classify_enquiry_llm(text):
+    response = client.responses.create(
+        model="gpt-5.4-nano",
+        instructions=SYSTEM_PROMPT,
+        input=text
+    )
+
+    return json.loads(response.output_text)
 
 
 if __name__ == "__main__":
-    sample = "We are interested in pricing for 120 users and would like a proposal."
-    result = classify_enquiry(sample)
+    sample = (
+        "Our users are locked out of the platform "
+        "and work has stopped."
+    )
+
+    result = classify_enquiry_llm(sample)
+
     print(result)
