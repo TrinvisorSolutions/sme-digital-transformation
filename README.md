@@ -14,6 +14,12 @@ The proposed solution combines a central CRM, data validation, AI-assisted triag
 
 ![Future-State Architecture](assets/future-state-architecture.png)
 
+## Hybrid AI Triage Workflow
+
+A hybrid approach combines deterministic rules, LLM classification and human review to balance speed, accuracy and control.
+
+![Hybrid AI Triage Workflow](assets/hybrid-ai-triage-workflow.png)
+
 ## Model Evaluation
 
 The LLM generalised substantially better than the tuned rules engine on unseen enquiries.
