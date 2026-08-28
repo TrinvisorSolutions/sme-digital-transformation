@@ -10,19 +10,20 @@ The objective is to assess the organisation's current processes, identify busine
 
 ## Client Scenario
 
-The client is a growing organisation with approximately 150 employees operating across:
+The client is a growing organisation with approximately 500 employees operating across:
 
 * Sales
 * Customer Service
 * Operations
 * Finance
+* IT
 * Management
 
-The organisation has grown rapidly, but many internal processes remain manual and disconnected.
+The organisation has expanded rapidly, but many internal processes remain manual and disconnected.
 
 Customer information is stored across multiple spreadsheets and systems, reporting requires significant manual effort, and teams rely heavily on email to coordinate work.
 
-Management has limited access to consistent real-time information about business performance.
+As the organisation has grown, these issues have become increasingly difficult to manage, creating data duplication, process delays, inconsistent customer experiences and limited visibility for management.
 
 ## Key Challenges
 
