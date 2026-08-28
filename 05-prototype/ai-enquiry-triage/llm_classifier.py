@@ -42,8 +42,6 @@ Return ONLY valid JSON in this format:
   "department": ""
 }
 
-Classification guidance:
-
 Sales:
 Pricing, demonstrations, quotations, proposals and buying interest.
 
