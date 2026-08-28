@@ -1,4 +1,5 @@
 import csv
+import time
 from pathlib import Path
 
 from llm_classifier import classify_enquiry_llm
@@ -18,11 +19,41 @@ def evaluate(enquiries):
     fully_correct = 0
 
     for index, enquiry in enumerate(enquiries, start=1):
-        result = classify_enquiry_llm(enquiry["enquiry_text"])
 
-        type_match = result["enquiry_type"] == enquiry["expected_type"]
-        priority_match = result["priority"] == enquiry["expected_priority"]
-        department_match = result["department"] == enquiry["expected_department"]
+        while True:
+            try:
+                result = classify_enquiry_llm(
+                    enquiry["enquiry_text"]
+                )
+                break
+
+            except Exception as error:
+                if "429" in str(error):
+                    print(
+                        f"\nRate limit reached at "
+                        f"{index}/{total}."
+                    )
+                    print("Waiting 25 seconds before retrying...\n")
+
+                    time.sleep(25)
+
+                else:
+                    raise error
+
+        type_match = (
+            result["enquiry_type"]
+            == enquiry["expected_type"]
+        )
+
+        priority_match = (
+            result["priority"]
+            == enquiry["expected_priority"]
+        )
+
+        department_match = (
+            result["department"]
+            == enquiry["expected_department"]
+        )
 
         if type_match:
             type_correct += 1
@@ -33,7 +64,11 @@ def evaluate(enquiries):
         if department_match:
             department_correct += 1
 
-        if type_match and priority_match and department_match:
+        if (
+            type_match
+            and priority_match
+            and department_match
+        ):
             fully_correct += 1
 
         print(
@@ -44,12 +79,28 @@ def evaluate(enquiries):
             f"{result['department']}"
         )
 
+        # Small delay to avoid sending requests too quickly
+        time.sleep(2)
+
     print("\nGemini Unseen Test Evaluation")
     print("--------------------------------")
     print(f"Total enquiries: {total}")
-    print(f"Type accuracy: {(type_correct / total) * 100:.2f}%")
-    print(f"Priority accuracy: {(priority_correct / total) * 100:.2f}%")
-    print(f"Department accuracy: {(department_correct / total) * 100:.2f}%")
+
+    print(
+        f"Type accuracy: "
+        f"{(type_correct / total) * 100:.2f}%"
+    )
+
+    print(
+        f"Priority accuracy: "
+        f"{(priority_correct / total) * 100:.2f}%"
+    )
+
+    print(
+        f"Department accuracy: "
+        f"{(department_correct / total) * 100:.2f}%"
+    )
+
     print(
         f"Fully correct classifications: "
         f"{(fully_correct / total) * 100:.2f}%"
@@ -67,4 +118,5 @@ if __name__ == "__main__":
     )
 
     enquiries = load_enquiries(dataset_path)
+
     evaluate(enquiries)
