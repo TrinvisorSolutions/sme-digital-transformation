@@ -1,112 +1,129 @@
-# SME | Digital Transformation
-End-to-end SME digital transformation case study covering business analysis, process improvement, CRM, automation, data, change and implementation planning.
 # SME Digital Transformation Case Study
 
 ## Overview
 
-This project demonstrates an end-to-end digital transformation consulting engagement for a growing SME experiencing operational inefficiencies, fragmented customer information and limited management visibility.
+A simulated consulting engagement for a growing organisation with approximately **500 employees and 1,500+ active customers**.
 
-The objective is to assess the organisation's current processes, identify business and technology gaps, define requirements and recommend a practical transformation roadmap.
+The project demonstrates how business analysis, data, automation and AI can be combined to improve customer onboarding, enquiry handling, operational visibility and management reporting.
+
+## Business Challenge
+
+Rapid growth created:
+
+* Fragmented customer information
+* Duplicate records
+* Manual reporting
+* Email-based hand-offs
+* Inconsistent onboarding
+* Repetitive administration
+* Limited management visibility
+* Poor workflow traceability
+
+## Proposed Solution
+
+The target operating model combines:
+
+**CRM + Data Validation + AI-Assisted Triage + Workflow Automation + Central Data + Management Analytics**
 
 ## Future-State Architecture
-
-The proposed solution combines a central CRM, data validation, AI-assisted triage, workflow automation and real-time reporting.
 
 ![Future-State Architecture](assets/future-state-architecture.png)
 
 ## Hybrid AI Triage Workflow
 
-A hybrid approach combines deterministic rules, LLM classification and human review to balance speed, accuracy and control.
+A hybrid model combines deterministic rules for predictable cases with LLM classification for more complex or ambiguous enquiries.
 
 ![Hybrid AI Triage Workflow](assets/hybrid-ai-triage-workflow.png)
 
 ## Project Results Dashboard
 
+Performance results from testing the AI triage solution against unseen enquiries.
+
 ![Project Results Dashboard](assets/project-results-dashboard.png)
 
 ## Model Evaluation
 
-The LLM generalised substantially better than the tuned rules engine on unseen enquiries.
-
 ![Rules vs LLM Classification Performance](assets/model-comparison.png)
 
-## Client Scenario
+### Key Result
 
-The client is a growing organisation with approximately 500 employees operating across:
+On the unseen test dataset:
 
-* Sales
-* Customer Service
-* Operations
-* Finance
-* IT
-* Management
+| Approach               | Fully Correct |
+| ---------------------- | ------------: |
+| Rules-Based Classifier |         37.5% |
+| OpenAI LLM Classifier  |     **72.5%** |
 
-The organisation has expanded rapidly, but many internal processes remain manual and disconnected.
+The LLM also achieved:
 
-Customer information is stored across multiple spreadsheets and systems, reporting requires significant manual effort, and teams rely heavily on email to coordinate work.
+* **92.5%** enquiry type accuracy
+* **92.5%** routing accuracy
+* **77.5%** priority accuracy
 
-As the organisation has grown, these issues have become increasingly difficult to manage, creating data duplication, process delays, inconsistent customer experiences and limited visibility for management.
+The experiment demonstrated that a rules engine could perform extremely well on familiar data while generalising poorly to new language patterns.
 
-## Key Challenges
+## Solution Components
 
-Initial challenges identified include:
+### Business Analysis
 
-* Fragmented customer information
-* Duplicate and inconsistent records
-* Manual reporting processes
-* Limited management visibility
-* Slow customer onboarding
-* Heavy reliance on email
-* Repetitive administrative work
-* Lack of standardised processes
-* Limited workflow automation
-* Inconsistent use of business systems
+* Stakeholder analysis
+* As-Is process assessment
+* Pain-point analysis
+* Business and functional requirements
+* User stories and acceptance criteria
+* Requirements traceability
 
-## Project Objectives
+### Data & Systems
 
-The engagement will aim to:
+* CRM data model
+* Central customer record
+* Data validation
+* Workflow status tracking
+* Role-based access
+* Reporting architecture
 
-1. Understand the current operating environment.
-2. Identify process, data and technology pain points.
-3. Define business and functional requirements.
-4. Identify opportunities for process improvement.
-5. Assess CRM and automation requirements.
-6. Develop a future-state operating model.
-7. Recommend an implementation roadmap.
-8. Define measurable business benefits.
+### AI & Automation
 
-## Consulting Approach
+* Rules-based baseline classifier
+* LLM enquiry classification
+* Unseen test dataset
+* Error analysis
+* Model comparison
+* Human-in-the-loop workflow
+* Automated routing and task creation
 
-The project will follow the structure:
+## Technology
 
-**Discovery → Analysis → Requirements → Solution Design → Delivery Planning → Change → Benefits Measurement**
+**Python | CSV | OpenAI API | CRM Design | Data Modelling | Workflow Automation | AI Classification | Git | GitHub Codespaces**
 
-## Planned Deliverables
+## Repository Structure
 
-The portfolio will include:
+```text
+01-discovery/
+02-requirements/
+03-solution-design/
+04-data-and-analytics/
+05-prototype/
+assets/
+```
 
-* Problem Statement
-* Stakeholder Analysis
-* Discovery Questions
-* As-Is Process Analysis
-* Pain Point Analysis
-* Business Requirements
-* Functional Requirements
-* Data Quality Assessment
-* KPI Framework
-* CRM Requirements
-* Automation Opportunities
-* To-Be Process Design
-* Implementation Roadmap
-* RACI Matrix
-* RAID Log
-* Change Impact Assessment
-* Training Plan
-* Benefits Realisation Framework
-* Executive Recommendations
+Each folder contains supporting artefacts from discovery through solution design and prototype evaluation.
+
+## Key Learning
+
+The project reinforced several principles:
+
+* Technology should address a defined business problem.
+* Automation should follow process standardisation.
+* Development accuracy alone is not enough to prove model quality.
+* Unseen data is essential when assessing generalisation.
+* Human review remains important for ambiguous or higher-risk cases.
+* AI, rules and workflow automation can complement each other rather than being treated as competing approaches.
 
 ## Portfolio Note
 
 This is a simulated consulting engagement using fictional organisational details and synthetic data.
 
-The project is designed to demonstrate practical business analysis, transformation, data, technology and delivery capability.
+The project was created to demonstrate practical capability across business analysis, digital transformation, data, automation, AI and solution delivery.
+
+
