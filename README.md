@@ -8,6 +8,12 @@ This project demonstrates an end-to-end digital transformation consulting engage
 
 The objective is to assess the organisation's current processes, identify business and technology gaps, define requirements and recommend a practical transformation roadmap.
 
+## Future-State Architecture
+
+The proposed solution combines a central CRM, data validation, AI-assisted triage, workflow automation and real-time reporting.
+
+![Future-State Architecture](assets/future-state-architecture.png)
+
 ## Model Evaluation
 
 The LLM generalised substantially better than the tuned rules engine on unseen enquiries.
