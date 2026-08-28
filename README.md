@@ -8,6 +8,12 @@ This project demonstrates an end-to-end digital transformation consulting engage
 
 The objective is to assess the organisation's current processes, identify business and technology gaps, define requirements and recommend a practical transformation roadmap.
 
+## Model Evaluation
+
+The LLM generalised substantially better than the tuned rules engine on unseen enquiries.
+
+![Rules vs LLM Classification Performance](assets/model-comparison.png)
+
 ## Client Scenario
 
 The client is a growing organisation with approximately 500 employees operating across:
