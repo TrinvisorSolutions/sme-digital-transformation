@@ -34,45 +34,13 @@ Assign exactly one department:
 - Customer Service
 - Management
 
-Return ONLY valid JSON in this format:
+Return only valid JSON in this format:
 
 {
   "enquiry_type": "",
   "priority": "",
   "department": ""
 }
-
-Sales:
-Pricing, demonstrations, quotations, proposals and buying interest.
-
-Technical Support:
-System failures, login issues, API questions, errors and technical problems.
-
-Billing:
-Invoices, payments, charges, purchase orders and billing details.
-
-Complaint:
-Dissatisfaction, unresolved service issues, escalation requests or cancellation caused by poor service.
-
-Partnership:
-Sponsorship, referral relationships, commercial partnerships, joint initiatives and collaboration.
-
-General Enquiry:
-General information that does not clearly belong to another category.
-
-Priority guidance:
-
-Urgent:
-Business operations are significantly disrupted, customers are being affected or immediate action is clearly required.
-
-High:
-Important issue requiring prompt attention.
-
-Medium:
-Normal business request requiring follow-up.
-
-Low:
-Informational or non-time-sensitive request.
 
 Classify based on meaning rather than individual keywords.
 """
@@ -87,12 +55,12 @@ Customer enquiry:
 {text}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
+    interaction = client.interactions.create(
+        model="gemini-3.6-flash",
+        input=prompt
     )
 
-    output = response.text.strip()
+    output = interaction.output_text.strip()
 
     if output.startswith("```json"):
         output = output[7:]
