@@ -18,7 +18,7 @@ The proposed solution combines a central CRM, data validation, AI-assisted triag
 
 A hybrid approach combines deterministic rules, LLM classification and human review to balance speed, accuracy and control.
 
-![Hybrid AI Triage Workflow](assets/hybrid ai triage workflow.png)
+![Hybrid AI Triage Workflow](assets/hybrid-ai-triage-workflow.png)
 
 ## Model Evaluation
 
