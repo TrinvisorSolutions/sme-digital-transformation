@@ -1,100 +1,149 @@
-# SME Digital Transformation Case Study
+# SME Digital Transformation & AI Triage
 
-## Overview
+## Project Overview
 
-A simulated consulting engagement for a growing organisation with approximately **500 employees and 1,500+ active customers**.
+This case study is based on real-world organisational transformation, operational improvement and digital delivery work, with client and organisational details anonymised to protect confidentiality.
 
-The project demonstrates how business analysis, data, automation and AI can be combined to improve customer onboarding, enquiry handling, operational visibility and management reporting.
+The project has been extended with a technical prototype to demonstrate modern CRM design, workflow automation, data architecture and AI-assisted enquiry triage.
 
-## Business Challenge
+Synthetic data is used where real client data cannot appropriately be shared.
 
-Rapid growth created:
+---
 
-* Fragmented customer information
-* Duplicate records
-* Manual reporting
-* Email-based hand-offs
-* Inconsistent onboarding
-* Repetitive administration
-* Limited management visibility
-* Poor workflow traceability
+## Business Context
 
-## Proposed Solution
+The organisation had grown across multiple functions, but processes, responsibilities and reporting practices had not developed consistently.
 
-The target operating model combines:
+This created challenges around:
 
-**CRM + Data Validation + AI-Assisted Triage + Workflow Automation + Central Data + Management Analytics**
+| Challenge | Business Impact |
+|---|---|
+| Fragmented customer information | Multiple versions of customer records |
+| Manual processes | Increased administrative effort |
+| Inconsistent onboarding | Variable customer experience |
+| Email-based hand-offs | Limited workflow visibility |
+| Duplicate data | Reduced trust in reporting |
+| Manual reporting | Slow access to management information |
+| Unclear ownership | Delays and accountability gaps |
+| Limited automation | Reduced scalability |
+
+---
+
+## Transformation Objective
+
+The objective was to create a more integrated, scalable and measurable operating model by combining:
+
+**Process Improvement + CRM + Data + Workflow Automation + AI + Management Reporting**
+
+---
 
 ## Future-State Architecture
 
 ![Future-State Architecture](assets/future-state-architecture.png)
 
-## Hybrid AI Triage Workflow
+The future-state design introduces:
 
-A hybrid model combines deterministic rules for predictable cases with LLM classification for more complex or ambiguous enquiries.
+- Centralised customer information
+- Standardised workflows
+- Data validation
+- Automated task routing
+- AI-assisted enquiry triage
+- Improved reporting
+- Better management visibility
+
+---
+
+## Hybrid AI Triage Workflow
 
 ![Hybrid AI Triage Workflow](assets/hybrid-ai-triage-workflow.png)
 
-## Project Results Dashboard
+The prototype combines:
 
-Performance results from testing the AI triage solution against unseen enquiries.
+| Layer | Purpose |
+|---|---|
+| **Rules Engine** | Handles predictable and low-complexity cases |
+| **LLM Classification** | Interprets more varied or ambiguous language |
+| **Human Review** | Handles lower-confidence or higher-risk cases |
+| **CRM Update** | Maintains customer and workflow records |
+| **Automation** | Creates tasks, alerts and routing actions |
+| **Reporting** | Tracks performance and operational outcomes |
+
+---
+
+## Project Results
 
 ![Project Results Dashboard](assets/project-results-dashboard.png)
 
-## Model Evaluation
+### AI Evaluation
+
+| Measure | Result |
+|---|---:|
+| Enquiry Type Accuracy | **92.5%** |
+| Routing Accuracy | **92.5%** |
+| Priority Accuracy | **77.5%** |
+| Fully Correct Classification | **72.5%** |
+| Rules-Based Fully Correct on Unseen Data | 37.5% |
+| LLM Fully Correct on Unseen Data | **72.5%** |
+
+---
+
+## Rules vs LLM Evaluation
 
 ![Rules vs LLM Classification Performance](assets/model-comparison.png)
 
-### Key Result
+The rules-based classifier performed strongly after being tuned against the development dataset, but performance declined significantly when tested against unseen language.
 
-On the unseen test dataset:
+The LLM generalised more effectively.
 
-| Approach               | Fully Correct |
-| ---------------------- | ------------: |
-| Rules-Based Classifier |         37.5% |
-| OpenAI LLM Classifier  |     **72.5%** |
+**Fully correct classification improved from 37.5% to 72.5% on unseen enquiries.**
 
-The LLM also achieved:
+This demonstrated an important delivery principle:
 
-* **92.5%** enquiry type accuracy
-* **92.5%** routing accuracy
-* **77.5%** priority accuracy
+> High development accuracy does not automatically demonstrate reliable real-world performance.
 
-The experiment demonstrated that a rules engine could perform extremely well on familiar data while generalising poorly to new language patterns.
+---
 
-## Solution Components
+## Business Analysis & Transformation Work
 
-### Business Analysis
+| Area | Work Demonstrated |
+|---|---|
+| **Discovery** | Problem definition, stakeholder analysis, discovery questions |
+| **Process Analysis** | As-Is assessment, pain-point analysis, root cause identification |
+| **Requirements** | Business requirements, functional requirements, user stories, acceptance criteria |
+| **Data** | Customer data structures, validation requirements, synthetic test datasets |
+| **CRM** | Customer record design, workflow stages, permissions and ownership |
+| **Automation** | Routing, task creation, alerts and escalation logic |
+| **AI** | Rules baseline, LLM classification, unseen testing, model evaluation |
+| **Change** | Stakeholder engagement, adoption considerations and human oversight |
+| **Delivery** | Solution architecture, implementation planning and benefits focus |
 
-* Stakeholder analysis
-* As-Is process assessment
-* Pain-point analysis
-* Business and functional requirements
-* User stories and acceptance criteria
-* Requirements traceability
+---
 
-### Data & Systems
+## Consulting Approach
 
-* CRM data model
-* Central customer record
-* Data validation
-* Workflow status tracking
-* Role-based access
-* Reporting architecture
+| Stage | Focus |
+|---|---|
+| **Discover** | Understand the business problem and stakeholder needs |
+| **Analyse** | Identify root causes, process gaps and data issues |
+| **Design** | Define requirements and future-state architecture |
+| **Build** | Develop workflows, prototypes and analytical components |
+| **Validate** | Test performance against expected outcomes |
+| **Implement** | Plan delivery, change and adoption |
+| **Measure** | Track KPIs and business benefits |
 
-### AI & Automation
+---
 
-* Rules-based baseline classifier
-* LLM enquiry classification
-* Unseen test dataset
-* Error analysis
-* Model comparison
-* Human-in-the-loop workflow
-* Automated routing and task creation
+## Technology & Methods
 
-## Technology
+| Category | Tools & Methods |
+|---|---|
+| **Data** | Python, CSV, data validation, data modelling |
+| **AI** | OpenAI API, LLM classification, prompt design, model evaluation |
+| **Business Analysis** | Requirements engineering, process analysis, user stories, acceptance criteria |
+| **Transformation** | CRM design, workflow automation, solution architecture |
+| **Delivery** | Git, GitHub, GitHub Codespaces, iterative testing |
 
-**Python | CSV | OpenAI API | CRM Design | Data Modelling | Workflow Automation | AI Classification | Git | GitHub Codespaces**
+---
 
 ## Repository Structure
 
@@ -105,25 +154,48 @@ The experiment demonstrated that a rules engine could perform extremely well on 
 04-data-and-analytics/
 05-prototype/
 assets/
-```
+````
 
-Each folder contains supporting artefacts from discovery through solution design and prototype evaluation.
+### Key Artefacts
 
-## Key Learning
+| Folder                  | Contents                                                        |
+| ----------------------- | --------------------------------------------------------------- |
+| `01-discovery`          | Problem statement, stakeholders, discovery, As-Is analysis      |
+| `02-requirements`       | Business and functional requirements, user stories              |
+| `03-solution-design`    | Architecture, CRM data model, automation and AI design          |
+| `04-data-and-analytics` | Development and unseen test datasets                            |
+| `05-prototype`          | Rules classifier, LLM classifier, evaluation and error analysis |
+| `assets`                | Architecture, workflow and performance visuals                  |
 
-The project reinforced several principles:
+---
 
-* Technology should address a defined business problem.
-* Automation should follow process standardisation.
-* Development accuracy alone is not enough to prove model quality.
-* Unseen data is essential when assessing generalisation.
-* Human review remains important for ambiguous or higher-risk cases.
-* AI, rules and workflow automation can complement each other rather than being treated as competing approaches.
+## Key Learnings
 
-## Portfolio Note
+| Principle                      | Insight                                                 |
+| ------------------------------ | ------------------------------------------------------- |
+| **Business Before Technology** | Technology should address a defined operational problem |
+| **Simplify Before Automating** | Poor processes should not simply be automated           |
+| **Validate on Unseen Data**    | Development performance alone is not enough             |
+| **Use Hybrid Approaches**      | Rules and AI can complement each other                  |
+| **Keep Human Oversight**       | Ambiguous or higher-risk cases need review              |
+| **Measure Outcomes**           | Success should be linked to measurable business results |
 
-This is a simulated consulting engagement using fictional organisational details and synthetic data.
+---
 
-The project was created to demonstrate practical capability across business analysis, digital transformation, data, automation, AI and solution delivery.
+## Portfolio Context
+
+This project reflects the types of transformation, process, data and technology challenges I have worked on professionally.
+
+Where real-world experience informs the case study, organisational and client details have been anonymised.
+
+Synthetic data is used to protect confidentiality.
+
+Selected technical elements, including the AI triage prototype and model evaluation, were developed specifically for this portfolio to demonstrate modern solution design, automation and AI capability.
+
+---
+
+## What This Project Demonstrates
+
+**Business Analysis | Digital Transformation | CRM | Data | Workflow Automation | AI | Model Evaluation | Change | Delivery**
 
 
